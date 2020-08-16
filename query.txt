@@ -1,0 +1,13 @@
+fetch_stocks_details
+SELECT s.id,p.Products,s.product_per_kg As 'Quantity' FROM `product_details` AS p JOIN `stocks_details` AS s ON p.id = s.Product_id GROUP BY `Product_id`
+
+fetch_supply_details
+SELECT s.id,s.Card_no,p.Products,s.Quantity,s.Date,s.Time As 'Quantity' FROM `product_details` AS p JOIN `sales_details` AS s ON p.id = s.Product_id GROUP BY `id` 
+
+
+fetch_available_stocks_total
+SELECT d.id,d.Products,s.product_per_kg as 'Stock', SUM(l.`Quantity`) as 'Sold Stock', s.product_per_kg- SUM(l.`Quantity`) as 'Available' FROM product_details d JOIN stocks_details s ON d.id=s.Product_id INNER JOIN sales_details l ON l.Product_id=s.Product_id GROUP BY id
+
+New gmail account
+Username-ration.sessolapur@gmail.com
+Password-sessolapur10
